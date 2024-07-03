@@ -4,7 +4,6 @@ import { CiSettings } from "react-icons/ci";
 import { MdTaskAlt } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
 import { GoGoal } from "react-icons/go";
-import { TbBuildingWarehouse } from "react-icons/tb";
 import { BsBuildings } from "react-icons/bs";
 import { IoLogoApple } from "react-icons/io5";
 import { TbBrandTabler } from "react-icons/tb";
@@ -69,7 +68,6 @@ export default function RootLayout({
 
     const handleClickOutside = (event: { target: any }) => {
       if (itemRef.current && !itemRef.current.contains(event.target)) {
-        console.log("hi");
         setIsVisible(false);
       }
     };

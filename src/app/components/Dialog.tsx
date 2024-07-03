@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PlusIcon } from "lucide-react";
 import { useState } from "react";
-import { Person, data } from "../layout";
 
 export default function DialogDemo() {
   const [userData, setUserData] = useState({
