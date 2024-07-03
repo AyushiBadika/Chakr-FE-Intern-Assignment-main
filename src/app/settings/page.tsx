@@ -37,6 +37,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { User2Icon } from "lucide-react";
 import { FaThemeco } from "react-icons/fa";
+import Link from "next/link";
 // import defaultProfileImage from "../../assets/Profile - Settings_files";
 
 export default function page() {
@@ -65,19 +66,21 @@ export default function page() {
           <CommandGroup heading="User">
             <CommandItem>
               <User2Icon className="mr-2 h-4 w-4" />
-              <span>Profile</span>
+              <span>
+                <Link href={"/settings"}>Profile</Link>
+              </span>
             </CommandItem>
             <CommandItem>
               <FaThemeco className="mr-2 h-4 w-4" />
-              <span>Appearance</span>
+              <Link href={"/appearance"}>Appearance</Link>
             </CommandItem>
-            <CommandItem>
+            {/* <CommandItem>
               <RocketIcon className="mr-2 h-4 w-4" />
               <span>Launch</span>
-            </CommandItem>
+            </CommandItem> */}
           </CommandGroup>
 
-          <CommandGroup heading="Settings">
+          {/* <CommandGroup heading="Settings">
             <CommandItem>
               <PersonIcon className="mr-2 h-4 w-4" />
               <span>Profile</span>
@@ -93,7 +96,7 @@ export default function page() {
               <span>Settings</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
-          </CommandGroup>
+          </CommandGroup> */}
         </CommandList>
       </Command>
       <div className="border p-8 w-full h-full rounded m-8 overflow-scroll scrollbar-hide pb-12">
