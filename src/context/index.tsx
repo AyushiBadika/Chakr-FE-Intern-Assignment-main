@@ -1,10 +1,11 @@
 "use client";
-import { createContext, useContext } from "react";
-import { Person } from "./tyes";
+import { createContext, useContext, useEffect, useState } from "react";
+import { Person, Theme } from "./tyes";
 
 interface GlobalContextType {
   data: Person[];
 }
+
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
 export default function ContextWrapper({
@@ -70,14 +71,30 @@ export default function ContextWrapper({
     },
   ];
 
-  const getProfileData = (event: { target: any }) => {
-    console.log(event.target);
-  };
+  // useEffect(() => {
+  //   const root = window.document.documentElement;
+  //   root.classList.remove("light", "dark");
+
+  //   if (theme === "system") {
+  //     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+  //       .matches
+  //       ? "dark"
+  //       : "light";
+  //     root.classList.add(systemTheme);
+  //   } else {
+  //     root.classList.add(theme);
+  //   }
+  // }, [theme]);
+
   return (
     <GlobalContext.Provider value={{ data }}>{children}</GlobalContext.Provider>
   );
 }
 
 export function useGlobalContext() {
-  return useContext(GlobalContext);
+  const context = useContext(GlobalContext);
+  if (context === undefined) {
+    throw new Error("useGlobalContext must be used within a GlobalProvider");
+  }
+  return context;
 }

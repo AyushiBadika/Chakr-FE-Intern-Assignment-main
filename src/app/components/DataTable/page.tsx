@@ -234,7 +234,7 @@ export function DataTableDemo() {
   });
 
   return (
-    <div className=" h-[92%] mr-10 bg-white p-4 rounded-md">
+    <div className=" h-[92%] mr-10  p-4 rounded-md">
       <div className="rounded-md borderw-[90%] h-[95%]">
         <Table className="h-full">
           <TableHeader>

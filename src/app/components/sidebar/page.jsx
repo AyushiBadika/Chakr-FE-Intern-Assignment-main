@@ -28,19 +28,23 @@ import { FaThemeco } from "react-icons/fa";
 import Link from "next/link";
 // import defaultProfileImage from "../../assets/Profile - Settings_files";
 
-export default function page() {
+export default function SideBar() {
   const FormSchema = z.object({
     username: z.string().min(2, {
       message: "Username must be at least 2 characters.",
     }),
   });
 
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      username: "",
-    },
-  });
+  const form =
+    useForm <
+    z.infer <
+    typeof FormSchema >>
+      {
+        resolver: zodResolver(FormSchema),
+        defaultValues: {
+          username: "",
+        },
+      };
 
   return (
     <div className="absolute top-0 left-0 w-full h-full flex ">
@@ -186,7 +190,6 @@ export default function page() {
                 </>
               )}
             />
-            {/* <Button type="submit">Submit</Button> */}
           </form>
         </Form>
       </div>
